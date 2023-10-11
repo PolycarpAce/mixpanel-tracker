@@ -31,7 +31,7 @@ mixpanel.identify(/* \"<USER_ID\"> */)
 mixpanel.track('Sign Up', {
   'Signup Type': 'Referral'
 })
-    const trackWebsiteFetch = (url: "") => {
+    const trackWebsiteFetch = (url: "google.com") => {
       mixpanel.track("Website Fetched", { url });
     };
 
