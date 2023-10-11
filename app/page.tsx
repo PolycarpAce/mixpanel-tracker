@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import mixpanel from 'mixpanel-browser';
 
 import "./styles/style.css";
 
@@ -19,7 +20,18 @@ const FetchWebsite = ({ url }: { url: string }) => {
      * Track website fetch event
      * @param url - URL of the website
      */
-    const trackWebsiteFetch = (url: string) => {
+  
+
+ 
+mixpanel.init(<>, { debug: true, track_pageview: true, persistence: 'localStorage' });
+ 
+// Set this to a unique identifier for the user performing the event.
+mixpanel.identify(/* \"<USER_ID\"> */)
+ 
+mixpanel.track('Sign Up', {
+  'Signup Type': 'Referral'
+})
+    const trackWebsiteFetch = (url: "") => {
       mixpanel.track("Website Fetched", { url });
     };
 
