@@ -23,7 +23,7 @@ const FetchWebsite = ({ url }: { url: string }) => {
   
 
  
-mixpanel.init(<>, { debug: true, track_pageview: true, persistence: 'localStorage' });
+mixpanel.init(<NEXT_PUBLIC_MIXPANEL_TOKEN>, { debug: true, track_pageview: true, persistence: 'localStorage' });
  
 // Set this to a unique identifier for the user performing the event.
 mixpanel.identify(/* \"<USER_ID\"> */)
